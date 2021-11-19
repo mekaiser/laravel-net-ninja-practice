@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="wrapper create-pizza">
@@ -7,7 +7,7 @@
         @csrf
         <label for="name">Your name:</label>
         <input type="text" id="name" name="name">
-        
+
         <label for="type">Choose pizza type:</label>
         <select name="type" id="type">
             <option value="margarita">Margarita</option>
