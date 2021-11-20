@@ -7,7 +7,14 @@ use App\Models\pizza;
 
 class PizzaController extends Controller
 {
-    public function index(){
+
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
+    public function index()
+    {
 
         // $pizzas = Pizza::all();
         // $pizzas = Pizza::orderBy('name', 'desc')->get();
@@ -19,16 +26,19 @@ class PizzaController extends Controller
         ]);
     }
 
-    public function show($id){
+    public function show($id)
+    {
         $pizza = Pizza::findOrFail($id);
         return view('pizzas.show', ['pizza' => $pizza]);
     }
 
-    public function create(){
+    public function create()
+    {
         return view('pizzas.create');
     }
-    
-    public function store(){
+
+    public function store()
+    {
 
         $pizza = new Pizza();
 
@@ -43,7 +53,8 @@ class PizzaController extends Controller
         return redirect('/')->with('mssg', 'Thanks for your order');
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $pizza = Pizza::findOrFail($id);
         $pizza->delete();
 
